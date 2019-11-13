@@ -6,10 +6,10 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 document.getElementById("sendButton").disabled = true;
 
 connection.on("ReceiveMessage", function (user, message) {
-    var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/&lt;br\/&gt;/g, "<br/>");
     var encodedMsg = user + " says " + msg;
     var li = document.createElement("li");
-    li.textContent = encodedMsg;
+    li.innerHTML = encodedMsg;
     document.getElementById("messagesList").appendChild(li);
 });
 
