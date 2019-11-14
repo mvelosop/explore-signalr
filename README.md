@@ -2,10 +2,10 @@
 
 Variations on the [official SignalR tutorial](https://docs.microsoft.com/aspnet/core/tutorials/signalr)
 
-Besides the original `SendMessage` method the hub...
+Besides the original `SendMessage`, method the hub also handles the `Command` method, and understands the **LIST** command.
 
 ![](docs/media/send-message-list-command.png)
 
-The hub can also handle the `Command` method, to handle **LIST** and **SHUTDOWN**.
+The hub also understands the **SHUTDOWN** command.
 
 ![](docs/media/send-message-shutdown-command.png)
